@@ -64,6 +64,6 @@ public class task2 {
             System.out.println("Треугольник не существует — сторона C (" + c + ") больше или равна сумме сторон A и B (" + (a + b) + ").");
             return false;
         }
-        return true; // <-- раньше здесь стояло return false, из-за чего всё ломалось
+        return true;
     }
 }
