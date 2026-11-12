@@ -1,5 +1,35 @@
-public class task4 {
-    public static void main(String[] args) {
-        System.out.println("здесь пока тоже ничего нет!!!!");
+
+import java.util.Scanner;
+
+public class task4 { //Дано вещественное число x и натуральное число n. Вычислить (x-2)*(x-4)*...*(x-2n)/(x-1)*(x-3)*...*(x-2n-1))
+public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+
+    System.out.print("Введите x: ");
+    double x = sc.nextDouble();          // x - вещественное число по условию, поэтому double
+
+    System.out.print("Введите n: ");
+    int n = sc.nextInt();                // n - натуральное число по условию, поэтому int
+
+    // заводим две переменные для числителя и знаменателя. Числитель A, знаменатель B
+    // начинаем с 1, потому что умножение на 1 ничего не меняет
+    double A = 1.0;
+    double B = 1.0;
+
+    // идем циклом по числам от 1 до n и на каждом шаге i добавляем:
+    // в числитель множитель (x - 2*i) - это четные числа, в знаменатель множитель (x - 2*i + 1) - это нечетные числа
+    for (int i = 1; i <= n; i++) {
+        A = A * (x - 2 * i);        // (x-2)*(x-4)*...*(x-2n)
+        B = B * (x - (2 * i - 1)); // (x-1)*(x-3)*...*(x-2n-1)
     }
+
+    // проверяем, что знаменатель не ноль, иначе делить нельзя
+    if (B == 0) {
+        System.out.println("Ошибка: знаменатель равен нулю, на ноль делить нельзя!");
+    } else {
+        double y = A / B;
+        System.out.println("Ответ: y = " + y);
+    }
+}
 }
