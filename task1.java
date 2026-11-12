@@ -2,6 +2,8 @@ import java. util.Scanner;
 
 public static void main(String[] args) {
     Scanner scanner = new Scanner (System.in);
+
+    //Найти периметр и площадь прямоугольного треугольника, если даны длины его катетов a и b
     
     System.out.print("Введите сторону a: ");
     int a;
@@ -24,11 +26,10 @@ public static void main(String[] args) {
     int S;
     S = (a * b) / 2;
     System. out.println("Площадь прямоугольного треугольника " + S);
-    {
-        System.out.println("Длины сторон должны быть положительными числами. ");
-}
+
 double c = Math.sqrt(a*a + b*b);
-System.out.println(" Гипотенуза (c) = " + c);
+System.out.println("Гипотенуза (c) = " + c);
+
 double P = (a + b + c);
 System.out.println("Периметр треугольника равен " + P);
 }
