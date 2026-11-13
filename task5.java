@@ -13,7 +13,7 @@ public class task5 {
             return;
         }
 
-        int mid = s / 2; // середина (для отступов)
+        int mid = s / 2;   // середина (для отступов)
 
         for (int i = 0; i <= mid; i++) {
             for (int space = 0; space < mid - i; space++) {
